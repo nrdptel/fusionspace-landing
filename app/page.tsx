@@ -37,7 +37,7 @@ export default function Home() {
       />
       <SiteHeader />
 
-      {/* Hero. A soft indigo glow + the rocket mark, the value prop, and a
+      {/* Hero. A soft indigo glow + the sparkle mark, the value prop, and a
           primary CTA into the flagship tool. */}
       <section className="relative mt-12 overflow-hidden md:mt-20">
         <div

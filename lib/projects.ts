@@ -105,6 +105,28 @@ export const projects: Project[] = [
   },
 ];
 
+// Build-time sanity check on the catalog. This runs when the module is imported
+// during `next build`, so a malformed entry fails the build with a clear message
+// instead of silently shipping a broken card / detail page. Cheap insurance for
+// the "add a project = one entry" workflow.
+(function validateProjects() {
+  const seen = new Set<string>();
+  for (const p of projects) {
+    if (!/^[a-z0-9-]+$/.test(p.id)) {
+      throw new Error(`Invalid project id "${p.id}" — use lowercase letters, digits, and dashes.`);
+    }
+    if (seen.has(p.id)) throw new Error(`Duplicate project id "${p.id}" in lib/projects.ts.`);
+    seen.add(p.id);
+    if (!p.name || !p.description) {
+      throw new Error(`Project "${p.id}" is missing a name or description.`);
+    }
+    // A "live" project must actually be reachable — its card and detail page link out.
+    if (p.status === "live" && !p.href) {
+      throw new Error(`Live project "${p.id}" needs an href.`);
+    }
+  }
+})();
+
 export const liveProjects = projects.filter((p) => p.status === "live");
 
 /** Look up a live project by its slug (used by the /projects/<id> route). */
