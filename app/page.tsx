@@ -14,10 +14,10 @@ export default function Home() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/fusion-space-logo.svg"
+            src="/brand/fusion-space-wordmark.svg"
             alt="Fusion Space"
-            width={1694}
-            height={378}
+            width={1598}
+            height={281}
             className="h-6 w-auto md:h-7"
           />
         </a>
@@ -34,12 +34,12 @@ export default function Home() {
         <div className="flex flex-col items-start">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/fusion-space-mark.svg"
+            src="/brand/fusion-space-mark.svg"
             alt=""
             aria-hidden
-            width={986}
-            height={986}
-            className="h-12 w-12 md:h-14 md:w-14"
+            width={880}
+            height={815}
+            className="h-12 w-auto md:h-14"
           />
           <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
             Free, polished tools for high-power rocketry.
@@ -124,10 +124,10 @@ function SiteFooter() {
           <span>&copy; {year}</span>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/fusion-space-logo.svg"
+            src="/brand/fusion-space-wordmark.svg"
             alt="Fusion Space"
-            width={1694}
-            height={378}
+            width={1598}
+            height={281}
             className="h-4 w-auto"
           />
         </div>

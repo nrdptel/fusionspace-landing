@@ -98,7 +98,10 @@ app/
 lib/
   projects.ts           the project catalog — edit this to add a tool
 public/
-  fusion-space-logo.svg      wordmark (header + footer)
-  fusion-space-mark.svg      rocket mark (hero)
+  brand/                     Fusion Space logo variations (see brand/README.md)
+    fusion-space-wordmark.svg   horizontal wordmark (header + footer)
+    fusion-space-mark.svg       sparkle mark (hero)
+    fusion-space-stacked.svg    two-line lockup (spare)
+    fusion-space-vertical.svg   vertical lockup (spare)
   _headers                   Cloudflare Pages security headers
 ```
