@@ -34,11 +34,13 @@ export const metadata: Metadata = {
     title: "Fusion Space",
     description,
     url: "/",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fusion Space" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Fusion Space",
     description,
+    images: ["/og.png"],
   },
 };
 
@@ -48,6 +50,11 @@ export const metadata: Metadata = {
 // flash on refresh for dark-mode users.
 export const viewport: Viewport = {
   colorScheme: "light dark",
+  // Tints the mobile browser chrome to match each theme's page background.
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+  ],
 };
 
 // Apply the persisted theme choice as a class on <html>: `dark` or `light` for an

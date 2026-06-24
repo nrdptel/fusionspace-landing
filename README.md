@@ -87,13 +87,14 @@ this route, you can delete `.github/workflows/deploy-cloudflare.yml` to avoid tw
 
 ```
 app/
-  layout.tsx            root layout, fonts, theme-init script, metadata
+  layout.tsx            root layout, fonts, theme-init script, metadata, OG/manifest
   page.tsx              home page (header, hero, projects grid, footer)
   globals.css           Tailwind v4 + the shared dark/light theme system
   components/
     ThemeToggle.tsx     System → Light → Dark cycle (localStorage)
     ProjectCard.tsx     project tile + "More on the way" teaser
-  icon.svg, apple-icon.png   favicons (the Fusion Space rocket mark)
+  manifest.ts           web app manifest (installable / add-to-home-screen)
+  icon.svg, apple-icon.png   favicons (the Fusion Space sparkle mark)
   robots.ts, sitemap.ts, not-found.tsx
 lib/
   projects.ts           the project catalog — edit this to add a tool
@@ -103,5 +104,12 @@ public/
     fusion-space-mark.svg       sparkle mark (hero)
     fusion-space-stacked.svg    two-line lockup (spare)
     fusion-space-vertical.svg   vertical lockup (spare)
+  og.png                     social share card (1200×630) — see assets/gen-og.sh
+  icon-192.png, icon-512.png  PWA / manifest icons
   _headers                   Cloudflare Pages security headers
+assets/
+  gen-og.sh                  regenerates public/og.png from the brand lockup
 ```
+
+The brand SVGs are svgo-optimized (~45% of the raw Illustrator export). To regenerate the
+social card after a brand change, run `bash assets/gen-og.sh` (needs `librsvg2-bin`).
