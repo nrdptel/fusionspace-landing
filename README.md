@@ -29,25 +29,30 @@ npm run build    # static export → out/
 
 ## Adding a project
 
-The project grid on the home page is driven entirely by **`lib/projects.ts`**. To add a tool,
-append one entry to the `projects` array:
+The project catalog is driven entirely by **`lib/projects.ts`**. To add a tool, append one entry
+to the `projects` array:
 
 ```ts
 {
-  id: "my-tool",
+  id: "my-tool",                         // slug → /projects/my-tool
   name: "My Tool",
-  description: "One line on what it does and why it's useful.",
+  description: "One line shown on the home-page card.",
+  tagline: "Slightly longer lead for the detail page.",        // optional
+  longDescription: ["Paragraph one.", "Paragraph two."],       // optional
   href: "https://my-tool.fusionspace.co",
   domain: "my-tool.fusionspace.co",
-  repo: "https://github.com/nrdptel/my-tool", // optional
+  repo: "https://github.com/nrdptel/my-tool",                  // optional
   status: "live",
   tags: ["Tag one", "Tag two"],
+  features: [{ title: "Feature", detail: "What it does." }],   // optional
 }
 ```
 
-It renders on the home page and in the sitemap automatically — no other file changes. The
-understated **“More on the way”** card is always shown last and is intentionally vague, so the
-page never makes a promise about an unannounced project.
+That single entry renders the home-page card, a statically-generated **`/projects/<id>`** detail
+page, and a sitemap entry — no other file changes. The card links to the detail page; the detail
+page is where the outbound "visit site" / "source" links live. The understated
+**“More on the way”** card is always shown last and is intentionally vague, so the page never
+makes a promise about an unannounced project.
 
 ## Deployment — push to `main` goes live
 

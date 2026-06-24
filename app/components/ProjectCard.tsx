@@ -1,16 +1,16 @@
+import Link from "next/link";
 import type { Project } from "@/lib/projects";
 
-/** A single project tile. Live projects are a full-card link to the project's
- * domain; the "soon" teaser is a non-interactive dashed card that intentionally
- * stays vague (no link, no name) so it never over-promises. */
+/** A single project tile. The whole card links to the project's detail page
+ * (/projects/<id>); the detail page is where the outbound "visit site" / "source"
+ * links live. The "soon" teaser is a non-interactive dashed card that
+ * intentionally stays vague (no link, no name) so it never over-promises. */
 export function ProjectCard({ project }: { project: Project }) {
   const tags = project.tags ?? [];
 
   return (
-    <a
-      href={project.href}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={`/projects/${project.id}`}
       className="group flex h-full flex-col rounded-xl border border-zinc-200 bg-white p-5 transition hover:border-indigo-400 hover:shadow-sm dark:border-zinc-800 dark:bg-zinc-900/40 dark:hover:border-indigo-500/60"
     >
       <div className="flex items-start justify-between gap-3">
@@ -47,13 +47,13 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         )}
         <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-indigo-600 transition group-hover:gap-1.5 dark:text-indigo-400">
-          Open
+          View project
           <span aria-hidden className="transition group-hover:translate-x-0.5">
             &rarr;
           </span>
         </span>
       </div>
-    </a>
+    </Link>
   );
 }
 

@@ -27,10 +27,11 @@ production deploy to Cloudflare Pages. Feature branches / PRs run `ci.yml` (type
 
 ## Common tasks
 
-- **Add a project to the grid:** append one entry to `lib/projects.ts`. It renders on the home
-  page and in the sitemap automatically — no other file changes. Keep unannounced projects out;
-  the static "More on the way" card is the only forward-looking copy and stays intentionally
-  vague (no names, no dates).
+- **Add a project:** append one entry to `lib/projects.ts`. It renders the home-page card, a
+  statically-generated `/projects/<id>` detail page, and a sitemap entry — no other file changes.
+  Optional rich fields (`tagline`, `longDescription`, `features`) flesh out the detail page. Keep
+  unannounced projects out; the static "More on the way" card is the only forward-looking copy and
+  stays intentionally vague (no names, no dates).
 - **Change a logo / lockup:** the four brand variations live in `public/brand/` (see its
   README). Header + footer use the wordmark, the hero uses the sparkle mark. Each SVG's
   `viewBox` is cropped tight to the artwork and svgo-optimized.
