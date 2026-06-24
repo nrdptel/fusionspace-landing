@@ -1,0 +1,9 @@
+# Cloudflare Pages response headers, applied to every path: baseline security
+# headers against clickjacking, MIME sniffing, and referrer leakage. (No CSP —
+# the inline theme-init script in layout.tsx would need a per-request nonce/hash,
+# and a misconfigured CSP failing closed is a worse risk than its marginal
+# benefit on a static marketing page.)
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

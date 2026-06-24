@@ -1,0 +1,5 @@
+name = "fusionspace-landing"
+# Cloudflare Pages project. The static export lives in out/ (built by
+# `npm run build`). This is a pure static site — no Pages Functions, no runtime.
+pages_build_output_dir = "out"
+compatibility_date = "2024-11-01"

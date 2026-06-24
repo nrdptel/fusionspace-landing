@@ -1,0 +1,57 @@
+name: Deploy to Cloudflare Pages
+
+# Builds the Next.js static export (out/) and deploys it to Cloudflare Pages as a
+# PRODUCTION deployment, so a push to the production branch goes live on
+# fusionspace.co. Mirrors the deploy setup on motor.fusionspace.co.
+#
+# Triggers:
+#   - push to main: every merge to the production branch redeploys the site.
+#   - workflow_dispatch: manual deploy from the Actions tab.
+#
+# One-time setup (see README.md → Deployment):
+#   - Repo/org secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID.
+#   - A Cloudflare Pages project named `fusionspace-landing` (created
+#     automatically on the first `pages deploy`, or up front in the dashboard).
+#   - The custom domain fusionspace.co attached to that Pages project.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One in-flight deploy at a time; a newer push supersedes an older one.
+concurrency:
+  group: deploy-cloudflare
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install + build static export
+        env:
+          # Canonical site origin for OG / sitemap / canonical URLs.
+          NEXT_PUBLIC_SITE_URL: https://fusionspace.co
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # Upload the built static site (out/). public/_headers is copied into
+          # out/ by the build and picked up by Pages automatically.
+          # `--branch=main` forces a PRODUCTION deployment (the custom domain
+          # serves production; a preview branch would deploy but never go live).
+          command: pages deploy out --project-name=fusionspace-landing --branch=main
