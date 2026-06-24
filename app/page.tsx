@@ -2,9 +2,38 @@ import { liveProjects } from "@/lib/projects";
 import { ComingSoonCard, ProjectCard } from "./components/ProjectCard";
 import { ThemeToggle } from "./components/ThemeToggle";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fusionspace.co";
+
+// Organization + WebSite structured data, so search engines associate the brand,
+// logo, and GitHub with the site. Evaluated at build time and inlined.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#org`,
+      name: "Fusion Space",
+      url: siteUrl,
+      logo: `${siteUrl}/icon-512.png`,
+      sameAs: ["https://github.com/nrdptel"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      name: "Fusion Space",
+      url: siteUrl,
+      publisher: { "@id": `${siteUrl}/#org` },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-8 md:px-6 md:py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header — wordmark + theme toggle, mirroring motor.fusionspace.co. */}
       <header className="flex items-center justify-between gap-4">
         <a
@@ -91,7 +120,8 @@ export default function Home() {
 }
 
 function SiteFooter() {
-  const year = 2026;
+  // Evaluated at build time (static export), so each deploy refreshes the year.
+  const year = new Date().getFullYear();
   return (
     <footer className="mt-20 border-t border-zinc-200 pt-6 text-xs text-zinc-500 dark:border-zinc-800 dark:text-zinc-400 md:mt-28">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">

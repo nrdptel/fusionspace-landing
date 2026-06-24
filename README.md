@@ -113,3 +113,8 @@ assets/
 
 The brand SVGs are svgo-optimized (~45% of the raw Illustrator export). To regenerate the
 social card after a brand change, run `bash assets/gen-og.sh` (needs `librsvg2-bin`).
+
+## License
+
+Source code is [MIT](./LICENSE). The Fusion Space name and the brand assets in
+`public/brand/` are trademarks and are not covered by that license.
