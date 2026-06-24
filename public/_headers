@@ -1,9 +1,17 @@
-# Cloudflare Pages response headers, applied to every path: baseline security
-# headers against clickjacking, MIME sniffing, and referrer leakage. (No CSP —
-# the inline theme-init script in layout.tsx would need a per-request nonce/hash,
-# and a misconfigured CSP failing closed is a worse risk than its marginal
-# benefit on a static marketing page.)
+# Cloudflare Pages response headers.
+#
+# Baseline security headers on every path (clickjacking, MIME sniffing, referrer
+# leakage), plus a Permissions-Policy that switches off browser features this
+# static marketing site never uses. (No CSP — the inline theme-init script in
+# layout.tsx would need a per-request nonce/hash, and a misconfigured CSP failing
+# closed is a worse risk than its marginal benefit here.)
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: accelerometer=(), autoplay=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+
+# Next.js build output under /_next/static is content-hashed (the filename changes
+# whenever the bytes change), so it's safe to cache forever and immutable.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   },
   description,
   applicationName: "Fusion Space",
+  // Canonical to the apex so the www and *.pages.dev hostnames don't get indexed
+  // as duplicate content — they all resolve to one canonical URL.
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Fusion Space",
