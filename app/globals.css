@@ -70,10 +70,10 @@ summary:focus-visible,
 @keyframes fs-twinkle {
   0%,
   100% {
-    opacity: 0.35;
+    opacity: 0.12;
   }
   50% {
-    opacity: 0.85;
+    opacity: 0.42;
   }
 }
 .fs-twinkle {
