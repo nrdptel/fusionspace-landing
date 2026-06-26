@@ -19,7 +19,7 @@ function apply(theme: Theme): void {
   e.classList.toggle("light", theme === "light");
 }
 
-/** Cycles System → Light → Dark, persisted in localStorage. The inline script
+/** Cycles System -> Light -> Dark, persisted in localStorage. The inline script
  * in layout.tsx applies the stored choice before first paint; this keeps it in
  * sync afterward and re-applies on OS changes while in System mode. */
 export function ThemeToggle() {

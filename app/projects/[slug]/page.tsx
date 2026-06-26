@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, liveProjects } from "@/lib/projects";
+import { ArrowLeft, ArrowUpRight } from "../../components/icons";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 
@@ -78,9 +79,9 @@ export default async function ProjectPage({
       <div className="mt-10 md:mt-14">
         <Link
           href="/#projects"
-          className="inline-flex items-center gap-1 text-sm text-zinc-500 transition hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+          className="inline-flex items-center gap-1.5 text-sm text-zinc-500 transition hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
         >
-          <span aria-hidden>&larr;</span> All projects
+          <ArrowLeft className="h-4 w-4" /> All projects
         </Link>
       </div>
 
@@ -106,7 +107,7 @@ export default async function ProjectPage({
                 className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
               >
                 Visit {project.domain ?? "site"}
-                <span aria-hidden>&#8599;</span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             )}
             {project.repo && (
@@ -170,7 +171,7 @@ export default async function ProjectPage({
                 className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
               >
                 Visit {project.domain ?? "site"}
-                <span aria-hidden>&#8599;</span>
+                <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </section>

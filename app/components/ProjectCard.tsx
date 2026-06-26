@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
+import { ArrowRight } from "./icons";
 
 /** A single project tile. The whole card links to the project's detail page
  * (/projects/<id>); the detail page is where the outbound "visit site" / "source"
@@ -48,9 +49,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
         <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-indigo-600 transition group-hover:gap-1.5 dark:text-indigo-400">
           View project
-          <span aria-hidden className="transition group-hover:translate-x-0.5">
-            &rarr;
-          </span>
+          <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
         </span>
       </div>
     </Link>

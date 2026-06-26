@@ -3,7 +3,7 @@
 Official Fusion Space logo variations, converted from the source Illustrator files to
 optimized SVG. Each `viewBox` is cropped tight to the artwork (no surrounding whitespace), so
 they scale cleanly with `height` + `width: auto` in CSS. All four share the same warm-to-cool
-gradient (amber → lavender → blue) and read well on both the dark and light themes.
+gradient (amber -> lavender -> blue) and read well on both the dark and light themes.
 
 | File | Variation | Aspect | Where it's used |
 | --- | --- | --- | --- |

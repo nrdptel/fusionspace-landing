@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft } from "./components/icons";
 
 export default function NotFound() {
   return (
@@ -13,7 +14,7 @@ export default function NotFound() {
         href="/"
         className="mt-8 inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
       >
-        <span aria-hidden>&larr;</span>
+        <ArrowLeft className="h-4 w-4" />
         Back home
       </Link>
     </main>

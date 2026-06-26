@@ -1,5 +1,6 @@
 import { liveProjects } from "@/lib/projects";
 import { ComingSoonCard, ProjectCard } from "./components/ProjectCard";
+import { ArrowRight } from "./components/icons";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
 
@@ -69,7 +70,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
             >
               Open Motor Finder
-              <span aria-hidden>&rarr;</span>
+              <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#projects"

@@ -16,13 +16,13 @@ Static **Next.js 16** (App Router) + **React 19** + **Tailwind v4**, exported to
 ```bash
 npm install
 npm run dev         # http://localhost:3000
-npm run build       # static export → out/
+npm run build       # static export -> out/
 npm run typecheck   # tsc --noEmit
 ```
 
 ## Deploy
 
-Push to `main` → GitHub Action (`.github/workflows/deploy-cloudflare.yml`) builds and pushes a
+Push to `main` -> GitHub Action (`.github/workflows/deploy-cloudflare.yml`) builds and pushes a
 production deploy to Cloudflare Pages. Feature branches / PRs run `ci.yml` (typecheck + build).
 
 ## Common tasks

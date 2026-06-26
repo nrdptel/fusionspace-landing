@@ -22,7 +22,7 @@ Same stack as `motor.fusionspace.co`, so patterns carry over between the two rep
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # static export → out/
+npm run build    # static export -> out/
 ```
 
 `npm run build` writes the deployable static site to `out/`.
@@ -34,7 +34,7 @@ to the `projects` array:
 
 ```ts
 {
-  id: "my-tool",                         // slug → /projects/my-tool
+  id: "my-tool",                         // slug -> /projects/my-tool
   name: "My Tool",
   description: "One line shown on the home-page card.",
   tagline: "Slightly longer lead for the detail page.",        // optional
@@ -63,23 +63,23 @@ deployment to Cloudflare Pages. This mirrors the deploy setup on `motor.fusionsp
 ### One-time setup
 
 1. **Cloudflare API token** — create a token with the **Cloudflare Pages: Edit** permission
-   (My Profile → API Tokens, or the "Edit Cloudflare Workers" template scoped to Pages).
+   (My Profile -> API Tokens, or the "Edit Cloudflare Workers" template scoped to Pages).
 2. **GitHub secrets** — in this repo (or org-wide), add:
    - `CLOUDFLARE_API_TOKEN` — the token above
-   - `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account ID (Workers & Pages → Account ID)
+   - `CLOUDFLARE_ACCOUNT_ID` — your Cloudflare account ID (Workers & Pages -> Account ID)
 3. **Pages project** — the first deploy creates a project named `fusionspace-landing`
    automatically. (You can also pre-create it in the dashboard as a "Direct Upload" project with
    that exact name.)
-4. **Custom domain** — in the Pages project → **Custom domains**, add `fusionspace.co`
+4. **Custom domain** — in the Pages project -> **Custom domains**, add `fusionspace.co`
    (and `www` if you want it). Since the domain is already on Cloudflare, DNS is wired up for you.
    Make sure the domain points at the **production** deployment.
 
-After that, `git push` to `main` → the site is live.
+After that, `git push` to `main` -> the site is live.
 
 ### Alternative: Cloudflare Git integration (no secrets)
 
 If you'd rather not manage GitHub secrets, connect this repo directly in the Cloudflare dashboard
-(**Workers & Pages → Create → Pages → Connect to Git**) with:
+(**Workers & Pages -> Create -> Pages -> Connect to Git**) with:
 
 - **Build command:** `npm run build`
 - **Build output directory:** `out`
@@ -96,7 +96,7 @@ app/
   page.tsx              home page (header, hero, projects grid, footer)
   globals.css           Tailwind v4 + the shared dark/light theme system
   components/
-    ThemeToggle.tsx     System → Light → Dark cycle (localStorage)
+    ThemeToggle.tsx     System -> Light -> Dark cycle (localStorage)
     ProjectCard.tsx     project tile + "More on the way" teaser
   manifest.ts           web app manifest (installable / add-to-home-screen)
   icon.svg, apple-icon.png   favicons (the Fusion Space sparkle mark)
