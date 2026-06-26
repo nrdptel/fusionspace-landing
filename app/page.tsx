@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* Hero. A soft indigo glow + a faint sparkle constellation behind the
           value prop, and a primary CTA into the flagship tool. */}
-      <section className="relative mt-12 overflow-hidden py-6 md:mt-20">
+      <section className="relative isolate mt-12 overflow-hidden py-6 md:mt-20">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl dark:bg-indigo-500/20"

@@ -6,24 +6,25 @@
 
 type Star = { top: number; left: number; size: number; opacity: number; delay?: number };
 
-// Twinkling sparkles (slow opacity pulse) — kept few and faint.
+// Twinkling sparkles (slow opacity pulse via .fs-twinkle). The inline opacity is
+// the static fallback shown under prefers-reduced-motion.
 const TWINKLE: Star[] = [
-  { top: 6, left: 7, size: 11, opacity: 0.35, delay: 0 },
-  { top: 19, left: 87, size: 16, opacity: 0.32, delay: 1.4 },
-  { top: 44, left: 93, size: 12, opacity: 0.28, delay: 2.6 },
-  { top: 74, left: 15, size: 10, opacity: 0.3, delay: 0.8 },
-  { top: 84, left: 56, size: 11, opacity: 0.26, delay: 3.2 },
-  { top: 57, left: 5, size: 13, opacity: 0.24, delay: 1.9 },
+  { top: 6, left: 7, size: 16, opacity: 0.6, delay: 0 },
+  { top: 19, left: 87, size: 22, opacity: 0.6, delay: 1.4 },
+  { top: 44, left: 93, size: 16, opacity: 0.55, delay: 2.6 },
+  { top: 74, left: 15, size: 14, opacity: 0.6, delay: 0.8 },
+  { top: 84, left: 56, size: 15, opacity: 0.5, delay: 3.2 },
+  { top: 57, left: 5, size: 18, opacity: 0.5, delay: 1.9 },
 ];
 
-// Static sparkles — even fainter, for depth without motion.
+// Static sparkles — softer, for depth without motion.
 const STATIC: Star[] = [
-  { top: 5, left: 61, size: 7, opacity: 0.18 },
-  { top: 31, left: 25, size: 8, opacity: 0.16 },
-  { top: 49, left: 41, size: 6, opacity: 0.14 },
-  { top: 63, left: 80, size: 14, opacity: 0.16 },
-  { top: 14, left: 45, size: 6, opacity: 0.15 },
-  { top: 90, left: 33, size: 8, opacity: 0.15 },
+  { top: 5, left: 61, size: 10, opacity: 0.42 },
+  { top: 31, left: 25, size: 12, opacity: 0.4 },
+  { top: 49, left: 41, size: 9, opacity: 0.34 },
+  { top: 63, left: 80, size: 18, opacity: 0.36 },
+  { top: 14, left: 45, size: 9, opacity: 0.38 },
+  { top: 90, left: 33, size: 11, opacity: 0.36 },
 ];
 
 const SPARKLE =
