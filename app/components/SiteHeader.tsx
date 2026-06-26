@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { KofiButton } from "./KofiButton";
 import { ThemeToggle } from "./ThemeToggle";
 
-/** Wordmark + theme toggle, shared by every page so the chrome is identical. */
+/** Wordmark + support/theme controls, shared by every page so the chrome is
+ * identical — and matched to motor.fusionspace.co's header (Tip + theme) so the
+ * sites read as one family. */
 export function SiteHeader() {
   return (
     <header className="flex items-center justify-between gap-4">
@@ -19,7 +22,10 @@ export function SiteHeader() {
           className="h-6 w-auto md:h-7"
         />
       </Link>
-      <ThemeToggle />
+      <div className="flex items-center gap-2">
+        <KofiButton />
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

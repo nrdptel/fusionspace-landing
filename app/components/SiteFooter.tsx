@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "./icons";
+
 /** Shared footer: nav, brand wordmark, and the non-affiliation note. */
 export function SiteFooter() {
   // Evaluated at build time (static export), so each deploy refreshes the year.
@@ -24,9 +26,10 @@ export function SiteFooter() {
             href="https://motor.fusionspace.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-zinc-800 dark:hover:text-zinc-200"
+            className="group inline-flex items-center gap-1 hover:text-zinc-800 dark:hover:text-zinc-200"
           >
             Motor Finder
+            <ArrowUpRight className="h-3 w-3 opacity-0 transition group-hover:opacity-100" />
           </a>
         </nav>
 
@@ -38,7 +41,7 @@ export function SiteFooter() {
             alt="Fusion Space"
             width={1598}
             height={281}
-            className="h-4 w-auto"
+            className="h-5 w-auto"
           />
         </div>
       </div>
