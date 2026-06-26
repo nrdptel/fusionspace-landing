@@ -46,16 +46,7 @@ export default function Home() {
           className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl dark:bg-indigo-500/20"
         />
         <div className="flex flex-col items-start">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/fusion-space-mark.svg"
-            alt=""
-            aria-hidden
-            width={880}
-            height={815}
-            className="h-12 w-auto md:h-14"
-          />
-          <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+          <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
             Free, polished tools for high-power rocketry.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">

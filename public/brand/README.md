@@ -8,7 +8,7 @@ gradient (amber -> lavender -> blue) and read well on both the dark and light th
 | File | Variation | Aspect | Where it's used |
 | --- | --- | --- | --- |
 | `fusion-space-wordmark.svg` | Horizontal "FusionSpace" + sparkle cluster | ~5.7 : 1 | Header + footer |
-| `fusion-space-mark.svg` | Sparkle cluster only | ~1.08 : 1 | Hero accent (also the favicon art) |
+| `fusion-space-mark.svg` | Sparkle cluster only | ~1.08 : 1 | Favicon art; spare for accents |
 | `fusion-space-stacked.svg` | Two-line "Fusion / Space" + sparkles | ~2.4 : 1 | Spare — social cards, denser layouts |
 | `fusion-space-vertical.svg` | Sparkles stacked over "FusionSpace" | ~1.8 : 1 | Spare — centered / square placements |
 
