@@ -1,5 +1,6 @@
 import { liveProjects } from "@/lib/projects";
 import { ComingSoonCard, ProjectCard } from "./components/ProjectCard";
+import { HeroStars } from "./components/HeroStars";
 import { ArrowRight } from "./components/icons";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -38,13 +39,14 @@ export default function Home() {
       />
       <SiteHeader />
 
-      {/* Hero. A soft indigo glow + the sparkle mark, the value prop, and a
-          primary CTA into the flagship tool. */}
-      <section className="relative mt-12 overflow-hidden md:mt-20">
+      {/* Hero. A soft indigo glow + a faint sparkle constellation behind the
+          value prop, and a primary CTA into the flagship tool. */}
+      <section className="relative mt-12 overflow-hidden py-6 md:mt-20">
         <div
           aria-hidden
           className="pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl dark:bg-indigo-500/20"
         />
+        <HeroStars />
         <div className="flex flex-col items-start">
           <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
             Free, polished tools for high-power rocketry.
@@ -88,6 +90,52 @@ export default function Home() {
           ))}
           <ComingSoonCard />
         </div>
+      </section>
+
+      {/* About — who's behind Fusion Space and what it stands for. */}
+      <section id="about" className="mt-20 scroll-mt-8 md:mt-28">
+        <h2 className="border-b border-zinc-200 pb-4 text-lg font-semibold tracking-tight dark:border-zinc-800">
+          About
+        </h2>
+        <div className="mt-6 max-w-2xl space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <p>
+            Fusion Space is an independent project building free tools for the high-power
+            rocketry community. Everything here is made to be genuinely useful at the bench —
+            fast, careful about the data, and free to use, with no ads, no accounts, and nothing
+            following you around.
+          </p>
+          <p>
+            The tools are open source, so you can see exactly how they work, check the data
+            yourself, and build on them. If something&apos;s wrong or missing, the source is a
+            click away.
+          </p>
+        </div>
+        <dl className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-3">
+          <div>
+            <dt className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              Free &amp; open source
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              Every tool is free to use, with public source you can inspect and build on.
+            </dd>
+          </div>
+          <div>
+            <dt className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              No ads or tracking
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              No accounts, no ads, and no analytics that follow you around the web.
+            </dd>
+          </div>
+          <div>
+            <dt className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+              Built for the bench
+            </dt>
+            <dd className="mt-1 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+              Made to be genuinely useful to real rocketry hobbyists, not to impress.
+            </dd>
+          </div>
+        </dl>
       </section>
 
       <SiteFooter />

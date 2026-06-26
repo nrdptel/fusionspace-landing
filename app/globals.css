@@ -64,6 +64,27 @@ summary:focus-visible,
   border-radius: 3px;
 }
 
+/* Subtle hero "constellation" — faint sparkles behind the headline that echo the
+   Fusion Space mark. A few twinkle very slowly; motion is disabled entirely for
+   visitors who prefer reduced motion, so it never distracts. */
+@keyframes fs-twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.fs-twinkle {
+  animation: fs-twinkle 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fs-twinkle {
+    animation: none;
+  }
+}
+
 /* The page <main> is a flex child of <body> (a flex column) with `mx-auto` +
    `max-w-*` and no explicit width, so it shrink-to-fits its content. Pinning
    width to 100% caps it at the viewport; wide children scroll inside their own
