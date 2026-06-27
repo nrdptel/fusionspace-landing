@@ -71,14 +71,14 @@ summary:focus-visible,
    light + prefers-dark rules mirror the theme logic above so it's correct on first
    paint. */
 .fs-hero-glow {
-  background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.12), transparent 75%);
+  background: radial-gradient(60% 68% at 50% 46%, rgba(99, 102, 241, 0.16), transparent 72%);
 }
 .dark .fs-hero-glow {
-  background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.18), transparent 75%);
+  background: radial-gradient(60% 68% at 50% 46%, rgba(99, 102, 241, 0.22), transparent 72%);
 }
 @media (prefers-color-scheme: dark) {
   html:not(.light) .fs-hero-glow {
-    background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.18), transparent 75%);
+    background: radial-gradient(60% 68% at 50% 46%, rgba(99, 102, 241, 0.22), transparent 72%);
   }
 }
 
