@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, liveProjects } from "@/lib/projects";
 import { ArrowLeft, ArrowUpRight } from "../../components/icons";
+import { LiveStats } from "../../components/LiveStats";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
 
@@ -97,6 +98,8 @@ export default async function ProjectPage({
               {project.tagline}
             </p>
           )}
+
+          {project.statsApi && <LiveStats api={project.statsApi} className="mt-4" />}
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             {project.href && (

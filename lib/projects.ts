@@ -34,6 +34,9 @@ export type Project = {
   domain?: string;
   /** Public source repository, if any. */
   repo?: string;
+  /** A CORS-open JSON endpoint exposing `{ counts: { motors, in_stock, vendors } }`,
+   * fetched client-side to show a live stat line. Omit if the project has none. */
+  statsApi?: string;
   status: ProjectStatus;
   /** Short tags shown as pills on the card. */
   tags?: string[];
@@ -64,6 +67,7 @@ export const projects: Project[] = [
     href: "https://motor.fusionspace.co",
     domain: "motor.fusionspace.co",
     repo: "https://github.com/nrdptel/Hobby-Rocket-Motor-Finder",
+    statsApi: "https://motor.fusionspace.co/api/v1/meta.json",
     status: "live",
     tags: ["Motor availability", "Price tracking", "Free JSON API"],
     features: [

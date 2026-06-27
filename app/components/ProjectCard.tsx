@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Project } from "@/lib/projects";
 import { ArrowRight } from "./icons";
+import { LiveStats } from "./LiveStats";
 
 /** A single project tile. The whole card links to the project's detail page
  * (/projects/<id>); the detail page is where the outbound "visit site" / "source"
@@ -41,16 +42,19 @@ export function ProjectCard({ project }: { project: Project }) {
         </ul>
       )}
 
-      <div className="mt-auto flex items-center justify-between gap-3 pt-5">
-        {project.domain && (
-          <span className="truncate font-mono text-xs text-zinc-500 dark:text-zinc-500">
-            {project.domain}
+      <div className="mt-auto pt-5">
+        {project.statsApi && <LiveStats api={project.statsApi} className="mb-3" />}
+        <div className="flex items-center justify-between gap-3">
+          {project.domain && (
+            <span className="truncate font-mono text-xs text-zinc-500 dark:text-zinc-500">
+              {project.domain}
+            </span>
+          )}
+          <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-indigo-600 transition group-hover:gap-1.5 dark:text-indigo-400">
+            View project
+            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
           </span>
-        )}
-        <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-indigo-600 transition group-hover:gap-1.5 dark:text-indigo-400">
-          View project
-          <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
-        </span>
+        </div>
       </div>
     </Link>
   );
