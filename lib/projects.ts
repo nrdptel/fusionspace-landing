@@ -3,12 +3,14 @@
 // its own /projects/<id> detail page, and appears in the sitemap. No other file
 // needs to change.
 //
-// Keep `status: "live"` projects in the order you want them featured (the home
-// page renders them top to bottom). Set `status: "soon"` for a teaser card that
-// deliberately does NOT over-promise — leave `href` undefined and keep the copy
-// vague until the project is real.
+// Every entry is rendered as a card on the home page (in array order) and gets a
+// /projects/<id> detail page. Use `status: "live"` for shipped tools (green "Live"
+// badge) and `status: "in-progress"` for a tool that's announced but still being
+// built (amber "In development" badge). For genuinely unannounced work, add
+// nothing here — the static "More on the way" card on the home page covers it
+// without naming anything.
 
-export type ProjectStatus = "live" | "soon";
+export type ProjectStatus = "live" | "in-progress";
 
 export type ProjectFeature = {
   /** Short feature name. */
@@ -176,6 +178,71 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: "debrief",
+    name: "Debrief",
+    description:
+      "A universal, in-browser altimeter flight-log analyzer. Drop in a file from any logger and " +
+      "get apogee, max velocity, max-Q and the curves that matter — with the real-world mess " +
+      "(ejection spikes, sensor noise, mixed units) handled. Analyzes flights you've already " +
+      "flown; not a simulator.",
+    tagline:
+      "Drop in an altimeter flight log and get one clean, correctly-analyzed flight — the headline numbers and the curves that matter.",
+    longDescription: [
+      "Debrief reads a flight log from any altimeter and turns it into one clean, " +
+        "correctly-analyzed flight: apogee, max velocity (and Mach), max acceleration, max-Q, " +
+        "burnout, deployments, descent rates, and flight time — with altitude, velocity, and " +
+        "acceleration plotted against time and the key events marked. It handles the real-world " +
+        "mess (ejection spikes, sensor noise, mixed sample rates, units) so the numbers are honest.",
+      "It shows its work — overlay the raw trace on the cleaned line, open the full channel " +
+        "explorer to plot anything the logger recorded (plus derived Mach and dynamic pressure), " +
+        "and export the analyzed series as CSV or the charts as PNG. Debrief analyzes flights " +
+        "you've already flown — it's not a simulator and doesn't predict performance.",
+    ],
+    href: "https://debrief.fusionspace.co",
+    domain: "debrief.fusionspace.co",
+    repo: "https://github.com/nrdptel/fusionspace-debrief",
+    status: "in-progress",
+    tags: ["Flight-log analysis", "Altimeter data", "In-browser"],
+    features: [
+      {
+        title: "Any logger",
+        detail: "Reads flight files from common altimeters and normalizes units, sample rates, and channels.",
+      },
+      {
+        title: "Headline numbers",
+        detail:
+          "Apogee, max velocity (and Mach), max acceleration, max-Q, burnout, deployments, descent rates, flight time.",
+      },
+      {
+        title: "The curves that matter",
+        detail:
+          "Altitude, velocity, and acceleration vs time, with liftoff, burnout, apogee, deploy, and landing marked.",
+      },
+      {
+        title: "Real apogee",
+        detail:
+          "A median filter removes the single-sample spike an ejection charge punches into a barometric trace.",
+      },
+      {
+        title: "Channel explorer",
+        detail:
+          "Plot anything the logger recorded — plus derived Mach and dynamic pressure — with live stats over the zoomed window.",
+      },
+      {
+        title: "Shows its work",
+        detail: "Overlay the raw trace on the cleaned line to see exactly what spike-removal took out.",
+      },
+      {
+        title: "Exports",
+        detail: "Copy a text summary, save the analyzed series as CSV, or save the charts as PNG.",
+      },
+      {
+        title: "On-device logbook",
+        detail: "Recent flights are remembered in your browser for quick re-opening — nothing leaves your device.",
+      },
+    ],
+  },
 ];
 
 // Build-time sanity check on the catalog. This runs when the module is imported
@@ -200,9 +267,11 @@ export const projects: Project[] = [
   }
 })();
 
+// Just the shipped tools — used for the "N live" counter.
 export const liveProjects = projects.filter((p) => p.status === "live");
 
-/** Look up a live project by its slug (used by the /projects/<id> route). */
+/** Look up any project (live or in-progress) by its slug — used by the
+ * /projects/<id> route, so in-development tools get a detail page too. */
 export function getProject(id: string): Project | undefined {
-  return liveProjects.find((p) => p.id === id);
+  return projects.find((p) => p.id === id);
 }

@@ -11,9 +11,12 @@ test("home page renders the hero and projects", async ({ page }) => {
     "href",
     "#projects",
   );
-  // Both live projects are listed.
+  // The live projects are listed...
   await expect(page.getByRole("link", { name: /HPR Motor Finder/ })).toBeVisible();
   await expect(page.getByRole("link", { name: /^Charge/ })).toBeVisible();
+  // ...and the in-development one is shown with its status.
+  await expect(page.getByRole("link", { name: /^Debrief/ })).toBeVisible();
+  await expect(page.getByText("In development").first()).toBeVisible();
 });
 
 test("a project card navigates to its detail page", async ({ page }) => {

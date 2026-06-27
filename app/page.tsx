@@ -1,4 +1,4 @@
-import { liveProjects } from "@/lib/projects";
+import { liveProjects, projects } from "@/lib/projects";
 import { ComingSoonCard, ProjectCard } from "./components/ProjectCard";
 import { HeroStars } from "./components/HeroStars";
 import { ArrowRight } from "./components/icons";
@@ -82,7 +82,7 @@ export default function Home() {
           </span>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {liveProjects.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
           <ComingSoonCard />

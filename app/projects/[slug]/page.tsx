@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProject, liveProjects } from "@/lib/projects";
+import { getProject, projects } from "@/lib/projects";
 import { ArrowLeft, ArrowUpRight } from "../../components/icons";
 import { LiveStats } from "../../components/LiveStats";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteHeader } from "../../components/SiteHeader";
+import { StatusBadge } from "../../components/StatusBadge";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fusionspace.co";
 
-// Static export needs the full set of slugs up front — one page per live project.
+// Static export needs the full set of slugs up front — one page per project
+// (live and in-progress).
 export function generateStaticParams() {
-  return liveProjects.map((p) => ({ slug: p.id }));
+  return projects.map((p) => ({ slug: p.id }));
 }
 
 export async function generateMetadata({
@@ -88,10 +90,7 @@ export default async function ProjectPage({
 
       <article className="mt-6">
         <header className="border-b border-zinc-200 pb-8 dark:border-zinc-800">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
-            Live
-          </span>
+          <StatusBadge status={project.status} />
           <h1 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">{project.name}</h1>
           {project.tagline && (
             <p className="mt-3 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">

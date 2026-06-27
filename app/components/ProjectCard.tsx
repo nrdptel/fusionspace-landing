@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Project } from "@/lib/projects";
 import { ArrowRight } from "./icons";
 import { LiveStats } from "./LiveStats";
+import { StatusBadge } from "./StatusBadge";
 
 /** A single project tile. The whole card links to the project's detail page
  * (/projects/<id>); the detail page is where the outbound "visit site" / "source"
@@ -19,10 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-base font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
           {project.name}
         </h3>
-        <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-medium text-emerald-700 dark:text-emerald-400">
-          <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
-          Live
-        </span>
+        <StatusBadge status={project.status} />
       </div>
 
       <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">

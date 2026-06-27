@@ -63,7 +63,9 @@ to the `projects` array:
 
 That single entry renders the home-page card, a statically-generated **`/projects/<id>`** detail
 page, and a sitemap entry — no other file changes. The card links to the detail page; the detail
-page is where the outbound "visit site" / "source" links live. The understated
+page is where the outbound "visit site" / "source" links live. Use `status: "live"` for a shipped
+tool (green "Live" badge) or `status: "in-progress"` for one that's announced but still being built
+(amber "In development" badge). The understated
 **“More on the way”** card is always shown last and is intentionally vague, so the page never
 makes a promise about an unannounced project.
 
