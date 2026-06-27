@@ -107,6 +107,75 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: "charge",
+    name: "Charge",
+    description:
+      "A black-powder ejection-charge calculator for high-power rocketry: size by chamber " +
+      "pressure or shear-pin force, see every constant in the formula, and close the loop with " +
+      "a ground-test log so you fly the charge you actually validated.",
+    tagline:
+      "Size black-powder ejection charges — then validate them against your own ground tests.",
+    longDescription: [
+      "Charge sizes the black-powder ejection charge for your airframe. Give it the tube inner " +
+        "diameter, the length of the pressurized section, and how hard the airframe is to " +
+        "separate — a target pressure, or shear pins plus friction — and it returns a starting " +
+        "charge in grams, showing the full formula and every constant so the number is never a " +
+        "black box.",
+      "It's built around the loop every flyer runs: size, ground-test, validate, fly. A " +
+        "browser-local ground-test log surfaces the charge you actually proved on the bench " +
+        "above the estimate, warns when your setup has drifted from what you tested, and exports " +
+        "a build/ground-test card and recovery report for a cert package. Always ground-test a " +
+        "charge before you fly it.",
+    ],
+    href: "https://charge.fusionspace.co",
+    domain: "charge.fusionspace.co",
+    repo: "https://github.com/nrdptel/fusionspace-charge",
+    status: "live",
+    tags: ["Ejection charges", "Ground-test log", "Sizing calculator"],
+    features: [
+      {
+        title: "Pressure or force sizing",
+        detail:
+          "Size by target chamber pressure, or by separation force — shear pins (with presets) plus friction.",
+      },
+      {
+        title: "Built-in safety margin",
+        detail:
+          "Size above the bare separation force or your target pressure, so a leaky real airframe still separates.",
+      },
+      {
+        title: "Single & dual-deploy",
+        detail:
+          "Separate drogue and main wells, with redundant backup charges for a second altimeter.",
+      },
+      {
+        title: "Vent-hole sizing",
+        detail:
+          "Size the static sampling ports for your altimeter bay by the standard one-port-per-100-in³ rule.",
+      },
+      {
+        title: "Shows all the math",
+        detail:
+          "The full formula, every constant, and a worked example from your own inputs — with references.",
+      },
+      {
+        title: "Ground-test log",
+        detail:
+          "Keep a browser-local log of bench tests — the charge that actually separated the airframe is the one to fly.",
+      },
+      {
+        title: "Closes the loop",
+        detail:
+          "Surfaces your validated charge above the estimate and warns if the setup has drifted from what you tested.",
+      },
+      {
+        title: "Cards & reports",
+        detail:
+          "Export a build/ground-test card and a recovery report as HTML or PDF — self-contained and offline.",
+      },
+    ],
+  },
 ];
 
 // Build-time sanity check on the catalog. This runs when the module is imported
