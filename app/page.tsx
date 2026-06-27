@@ -39,13 +39,10 @@ export default function Home() {
       />
       <SiteHeader />
 
-      {/* Hero. A soft indigo glow + a faint sparkle constellation behind the
-          value prop, and a primary CTA into the flagship tool. */}
-      <section className="relative isolate mt-12 overflow-hidden py-6 md:mt-20">
-        <div
-          aria-hidden
-          className="fs-glow-fade pointer-events-none absolute -top-24 left-1/2 -z-10 h-72 w-[36rem] max-w-full -translate-x-1/2 rounded-full bg-indigo-500/15 blur-3xl dark:bg-indigo-500/20"
-        />
+      {/* Hero. A soft indigo wash across the whole section + a faint sparkle
+          constellation behind the value prop, and a primary CTA into the tool. */}
+      <section className="relative isolate mt-12 py-6 md:mt-20">
+        <div aria-hidden className="fs-hero-glow pointer-events-none absolute inset-0 -z-10" />
         <HeroStars />
         <div className="flex flex-col items-start">
           <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">

@@ -64,13 +64,22 @@ summary:focus-visible,
   border-radius: 3px;
 }
 
-/* Soften the top of the hero glow. The hero's overflow-hidden clips the blurred
-   glow into a hard horizontal line at the section's top edge; this vertical mask
-   fades the glow to transparent before that edge, so it reads as a gentle fade-in
-   rather than a sharp line. (-webkit- prefix for Safari.) */
-.fs-glow-fade {
-  -webkit-mask-image: linear-gradient(to bottom, transparent 33%, #000 80%);
-  mask-image: linear-gradient(to bottom, transparent 33%, #000 80%);
+/* Ambient hero wash — a soft indigo glow spread across the whole hero section
+   (replacing the old confined circular blob). The gradient is anchored just above
+   the top edge so the section reads as an even top-down glow that fades toward the
+   bottom, with no hard shape or clipped edge. Dark mode is a touch stronger; the
+   light + prefers-dark rules mirror the theme logic above so it's correct on first
+   paint. */
+.fs-hero-glow {
+  background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.12), transparent 75%);
+}
+.dark .fs-hero-glow {
+  background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.18), transparent 75%);
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.light) .fs-hero-glow {
+    background: radial-gradient(130% 95% at 50% -8%, rgba(99, 102, 241, 0.18), transparent 75%);
+  }
 }
 
 /* Subtle hero "constellation" — faint sparkles behind the headline that echo the
