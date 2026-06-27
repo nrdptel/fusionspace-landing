@@ -64,6 +64,15 @@ summary:focus-visible,
   border-radius: 3px;
 }
 
+/* Soften the top of the hero glow. The hero's overflow-hidden clips the blurred
+   glow into a hard horizontal line at the section's top edge; this vertical mask
+   fades the glow to transparent before that edge, so it reads as a gentle fade-in
+   rather than a sharp line. (-webkit- prefix for Safari.) */
+.fs-glow-fade {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 33%, #000 80%);
+  mask-image: linear-gradient(to bottom, transparent 33%, #000 80%);
+}
+
 /* Subtle hero "constellation" — faint sparkles behind the headline that echo the
    Fusion Space mark. A few twinkle very slowly; motion is disabled entirely for
    visitors who prefer reduced motion, so it never distracts. */
