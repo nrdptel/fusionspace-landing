@@ -1,0 +1,22 @@
+name: Bug report
+description: Something on the site is wrong or broken
+labels: ["bug"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Which page is affected? A link is ideal.
+      placeholder: e.g. https://fusionspace.co/projects/motor-finder
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+      description: What did you expect, and what did you actually see?
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Browser / device (optional)
+      placeholder: e.g. Chrome on Android, Safari on iPhone
