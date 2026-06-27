@@ -18,12 +18,15 @@ npm install
 npm run dev         # http://localhost:3000
 npm run build       # static export -> out/
 npm run typecheck   # tsc --noEmit
+npm test            # vitest unit tests
+npm run test:e2e    # Playwright e2e (build first; downloads Chromium on first run)
 ```
 
 ## Deploy
 
 Push to `main` -> GitHub Action (`.github/workflows/deploy-cloudflare.yml`) builds and pushes a
-production deploy to Cloudflare Pages. Feature branches / PRs run `ci.yml` (typecheck + build).
+production deploy to Cloudflare Pages. PRs and pushes to `main` run `test.yml`
+(typecheck + unit tests + build + e2e).
 
 ## Common tasks
 

@@ -3,11 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "description": "Landing page for fusionspace.co — a hub for Fusion Space's hobby rocketry tools.",
+  "license": "MIT",
+  "author": "Fusion Space",
+  "homepage": "https://fusionspace.co",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrdptel/fusionspace-landing.git"
+  },
+  "keywords": [
+    "fusion-space",
+    "high-power-rocketry",
+    "landing-page",
+    "nextjs",
+    "cloudflare-pages"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "next": "16.2.6",
@@ -15,11 +32,14 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "serve": "^14.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.6"
   }
 }

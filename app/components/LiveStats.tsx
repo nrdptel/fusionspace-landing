@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-type Counts = { motors?: number; in_stock?: number; vendors?: number };
+import { formatLiveStats, type LiveCounts } from "@/lib/liveStats";
 
 /** A live stat line fetched entirely in the browser from a project's CORS-open
  * JSON endpoint — no server, no Pages Functions. Renders nothing until the data
@@ -10,13 +9,13 @@ type Counts = { motors?: number; in_stock?: number; vendors?: number };
  * the card / detail page always reads fine without it. Server-render is null too
  * (data only exists after the client fetch), so there's no hydration mismatch. */
 export function LiveStats({ api, className = "" }: { api: string; className?: string }) {
-  const [counts, setCounts] = useState<Counts | null>(null);
+  const [counts, setCounts] = useState<LiveCounts | null>(null);
 
   useEffect(() => {
     const ctrl = new AbortController();
     fetch(api, { signal: ctrl.signal, headers: { accept: "application/json" } })
       .then((r) => (r.ok ? r.json() : null))
-      .then((data: { counts?: Counts } | null) => {
+      .then((data: { counts?: LiveCounts } | null) => {
         if (data?.counts) setCounts(data.counts);
       })
       .catch(() => {
@@ -25,15 +24,8 @@ export function LiveStats({ api, className = "" }: { api: string; className?: st
     return () => ctrl.abort();
   }, [api]);
 
-  if (!counts) return null;
-
-  const parts: string[] = [];
-  if (typeof counts.motors === "number") parts.push(`${counts.motors.toLocaleString()} motors`);
-  if (typeof counts.in_stock === "number") {
-    parts.push(`${counts.in_stock.toLocaleString()} in stock now`);
-  }
-  if (typeof counts.vendors === "number") parts.push(`${counts.vendors} vendors`);
-  if (parts.length === 0) return null;
+  const line = formatLiveStats(counts);
+  if (!line) return null;
 
   return (
     <p
@@ -44,7 +36,7 @@ export function LiveStats({ api, className = "" }: { api: string; className?: st
         className="h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500 motion-safe:animate-pulse"
         title="Live data"
       />
-      <span>{parts.join(" · ")} · updated hourly</span>
+      <span>{line}</span>
     </p>
   );
 }

@@ -27,6 +27,19 @@ npm run build    # static export -> out/
 
 `npm run build` writes the deployable static site to `out/`.
 
+## Testing
+
+```bash
+npm run typecheck   # tsc --noEmit
+npm test            # vitest unit tests (lib/)
+npm run test:e2e    # Playwright smoke tests (build first)
+```
+
+Unit tests cover the framework-free logic (the project catalog and the live-stats
+formatter). End-to-end tests in `e2e/` drive the built static export in a headless browser
+(hero renders, project navigation, theme toggle). CI (`.github/workflows/test.yml`) runs all of
+these on every PR and on pushes to `main`. See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Adding a project
 
 The project catalog is driven entirely by **`lib/projects.ts`**. To add a tool, append one entry
