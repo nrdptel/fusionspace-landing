@@ -1,16 +1,19 @@
 import { expect, test } from "@playwright/test";
 
-test("home page renders the hero and the flagship project", async ({ page }) => {
+test("home page renders the hero and projects", async ({ page }) => {
   await page.goto("/");
   await expect(page).toHaveTitle("Fusion Space");
   await expect(
     page.getByRole("heading", { name: "Free, polished tools for high-power rocketry." }),
   ).toBeVisible();
-  // The hero CTA links straight into the tool.
-  await expect(page.getByRole("link", { name: /Open Motor Finder/ })).toHaveAttribute(
+  // The hero CTA points at the projects section (neutral, not a single tool).
+  await expect(page.getByRole("link", { name: "Browse the tools" })).toHaveAttribute(
     "href",
-    "https://motor.fusionspace.co",
+    "#projects",
   );
+  // Both live projects are listed.
+  await expect(page.getByRole("link", { name: /HPR Motor Finder/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /^Charge/ })).toBeVisible();
 });
 
 test("a project card navigates to its detail page", async ({ page }) => {

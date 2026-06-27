@@ -40,7 +40,7 @@ export default function Home() {
       <SiteHeader />
 
       {/* Hero. A soft indigo wash across the whole section + a faint sparkle
-          constellation behind the value prop, and a primary CTA into the tool. */}
+          constellation behind the value prop, and a primary CTA into the tools. */}
       <section className="relative isolate mt-12 py-6 md:mt-20">
         <div aria-hidden className="fs-hero-glow pointer-events-none absolute inset-0 -z-10" />
         <HeroStars />
@@ -54,19 +54,19 @@ export default function Home() {
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="https://motor.fusionspace.co"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#projects"
               className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-indigo-500"
             >
-              Open Motor Finder
+              Browse the tools
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#projects"
+              href="https://github.com/nrdptel"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
             >
-              See all projects
+              Source on GitHub
             </a>
           </div>
         </div>

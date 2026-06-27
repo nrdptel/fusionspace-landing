@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "./icons";
+import Link from "next/link";
 
 /** Shared footer: nav, brand wordmark, and the non-affiliation note. */
 export function SiteFooter() {
@@ -22,15 +22,9 @@ export function SiteFooter() {
           <span aria-hidden className="text-zinc-300 dark:text-zinc-700">
             ·
           </span>
-          <a
-            href="https://motor.fusionspace.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1 hover:text-zinc-800 dark:hover:text-zinc-200"
-          >
-            Motor Finder
-            <ArrowUpRight className="h-3 w-3 opacity-0 transition group-hover:opacity-100" />
-          </a>
+          <Link href="/#projects" className="hover:text-zinc-800 dark:hover:text-zinc-200">
+            Projects
+          </Link>
         </nav>
 
         <div className="flex items-center gap-1.5">
