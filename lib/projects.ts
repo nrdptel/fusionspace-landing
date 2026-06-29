@@ -243,6 +243,72 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    id: "window",
+    name: "Window",
+    description:
+      "A launch-weather board for US high-power and model rocketry: surface wind against the " +
+      "20 mph limit, winds aloft up to waiver altitude, storms, cloud ceiling, and a multi-day " +
+      "outlook for any field — one honest view, fetched live in your browser. No go/no-go verdict.",
+    tagline:
+      "Launch weather for high-power rocketry — surface wind against the limit, winds aloft to waiver altitude, and a multi-day outlook for any field.",
+    longDescription: [
+      "Window shows the weather a flyer needs to decide whether to fly: surface wind and gusts " +
+        "against the 20 mph NFPA/NAR/Tripoli limit, winds aloft by true height up to waiver " +
+        "altitude, density altitude, storm potential (CAPE), cloud ceiling and visibility, air " +
+        "quality, active NWS alerts, and a multi-day outlook — for any launch field, in one " +
+        "glanceable view.",
+      "It's purely informational: it takes no rocket parameters and produces no go/no-go " +
+        "verdict. It surfaces the data and the reference lines — the wind limit, the winds-aloft " +
+        "profile, the ceiling — and leaves the call to you and your field's rules. Every figure " +
+        "carries its source and valid time, fetched live in your browser.",
+    ],
+    href: "https://window.fusionspace.co",
+    domain: "window.fusionspace.co",
+    repo: "https://github.com/nrdptel/fusionspace-window",
+    status: "in-progress",
+    tags: ["Launch weather", "Winds aloft", "In-browser"],
+    features: [
+      {
+        title: "Surface wind vs the limit",
+        detail:
+          "Wind, gust, and direction against the 20 mph launch limit, with a steadiness read and a cross-check against the nearest station's observed wind.",
+      },
+      {
+        title: "Winds aloft",
+        detail:
+          "Wind speed and direction by true height, surface up to waiver altitude, flagging the strongest shear layer and the column's mean drift.",
+      },
+      {
+        title: "Storm potential",
+        detail: "Convective instability (CAPE) now and at the day's peak, in the bands meteorologists use.",
+      },
+      {
+        title: "Density altitude",
+        detail:
+          "How thin the air is — which sets thrust and descent — alongside temperature, sky, and a pressure tendency.",
+      },
+      {
+        title: "Calm windows",
+        detail:
+          "An hourly wind timeline that surfaces upcoming calm windows; drag a fly-time slider to any hour and the whole view follows.",
+      },
+      {
+        title: "Sky, ceiling & air quality",
+        detail:
+          "Observed ceiling and visibility from the nearest station, plus US AQI and smoke/dust particulate.",
+      },
+      {
+        title: "Multi-day outlook",
+        detail:
+          "A ~7-day view with each day's calmest flyable window, set against the field's seasonal normal.",
+      },
+      {
+        title: "Field briefing",
+        detail: "Copy a plain-text conditions summary for the club chat, or a link to the exact view.",
+      },
+    ],
+  },
 ];
 
 // Build-time sanity check on the catalog. This runs when the module is imported
