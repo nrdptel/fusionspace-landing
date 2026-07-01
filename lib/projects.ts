@@ -266,7 +266,7 @@ export const projects: Project[] = [
     href: "https://window.fusionspace.co",
     domain: "window.fusionspace.co",
     repo: "https://github.com/nrdptel/fusionspace-window",
-    status: "in-progress",
+    status: "live",
     tags: ["Launch weather", "Winds aloft", "In-browser"],
     features: [
       {
@@ -277,7 +277,7 @@ export const projects: Project[] = [
       {
         title: "Winds aloft",
         detail:
-          "Wind speed and direction by true height, surface up to waiver altitude, flagging the strongest shear layer and the column's mean drift.",
+          "Wind speed and direction by true height, surface up to waiver altitude — flagging the strongest shear layer and the mean wind, and turning your descent rate and apogee into a landing-drift distance.",
       },
       {
         title: "Storm potential",
@@ -296,7 +296,7 @@ export const projects: Project[] = [
       {
         title: "Sky, ceiling & air quality",
         detail:
-          "Observed ceiling and visibility from the nearest station, plus US AQI and smoke/dust particulate.",
+          "Observed ceiling and visibility from the nearest station — read as a go/no-go gate against your apogee — plus US AQI and smoke/dust particulate.",
       },
       {
         title: "Multi-day outlook",
