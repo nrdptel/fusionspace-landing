@@ -32,7 +32,7 @@ const jsonLd = {
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-8 md:px-6 md:py-10">
+    <main className="mx-auto w-full max-w-6xl px-4 py-8 md:px-6 md:py-10">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -81,7 +81,7 @@ export default function Home() {
             {liveProjects.length} live
           </span>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
