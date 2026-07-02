@@ -179,71 +179,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "debrief",
-    name: "Debrief",
-    description:
-      "A universal, in-browser altimeter flight-log analyzer. Drop in a file from any logger and " +
-      "get apogee, max velocity, max-Q and the curves that matter — with the real-world mess " +
-      "(ejection spikes, sensor noise, mixed units) handled. Analyzes flights you've already " +
-      "flown; not a simulator.",
-    tagline:
-      "Drop in an altimeter flight log and get one clean, correctly-analyzed flight — the headline numbers and the curves that matter.",
-    longDescription: [
-      "Debrief reads a flight log from any altimeter and turns it into one clean, " +
-        "correctly-analyzed flight: apogee, max velocity (and Mach), max acceleration, max-Q, " +
-        "burnout, deployments, descent rates, and flight time — with altitude, velocity, and " +
-        "acceleration plotted against time and the key events marked. It handles the real-world " +
-        "mess (ejection spikes, sensor noise, mixed sample rates, units) so the numbers are honest.",
-      "It shows its work — overlay the raw trace on the cleaned line, open the full channel " +
-        "explorer to plot anything the logger recorded (plus derived Mach and dynamic pressure), " +
-        "and export the analyzed series as CSV or the charts as PNG. Debrief analyzes flights " +
-        "you've already flown — it's not a simulator and doesn't predict performance.",
-    ],
-    href: "https://debrief.fusionspace.co",
-    domain: "debrief.fusionspace.co",
-    repo: "https://github.com/nrdptel/fusionspace-debrief",
-    status: "in-progress",
-    tags: ["Flight-log analysis", "Altimeter data", "In-browser"],
-    features: [
-      {
-        title: "Any logger",
-        detail: "Reads flight files from common altimeters and normalizes units, sample rates, and channels.",
-      },
-      {
-        title: "Headline numbers",
-        detail:
-          "Apogee, max velocity (and Mach), max acceleration, max-Q, burnout, deployments, descent rates, flight time.",
-      },
-      {
-        title: "The curves that matter",
-        detail:
-          "Altitude, velocity, and acceleration vs time, with liftoff, burnout, apogee, deploy, and landing marked.",
-      },
-      {
-        title: "Real apogee",
-        detail:
-          "A median filter removes the single-sample spike an ejection charge punches into a barometric trace.",
-      },
-      {
-        title: "Channel explorer",
-        detail:
-          "Plot anything the logger recorded — plus derived Mach and dynamic pressure — with live stats over the zoomed window.",
-      },
-      {
-        title: "Shows its work",
-        detail: "Overlay the raw trace on the cleaned line to see exactly what spike-removal took out.",
-      },
-      {
-        title: "Exports",
-        detail: "Copy a text summary, save the analyzed series as CSV, or save the charts as PNG.",
-      },
-      {
-        title: "On-device logbook",
-        detail: "Recent flights are remembered in your browser for quick re-opening — nothing leaves your device.",
-      },
-    ],
-  },
-  {
     id: "window",
     name: "Window",
     description:
@@ -306,6 +241,71 @@ export const projects: Project[] = [
       {
         title: "Field briefing",
         detail: "Copy a plain-text conditions summary for the club chat, or a link to the exact view.",
+      },
+    ],
+  },
+  {
+    id: "debrief",
+    name: "Debrief",
+    description:
+      "A universal, in-browser altimeter flight-log analyzer. Drop in a file from any logger and " +
+      "get apogee, max velocity, max-Q and the curves that matter — with the real-world mess " +
+      "(ejection spikes, sensor noise, mixed units) handled. Analyzes flights you've already " +
+      "flown; not a simulator.",
+    tagline:
+      "Drop in an altimeter flight log and get one clean, correctly-analyzed flight — the headline numbers and the curves that matter.",
+    longDescription: [
+      "Debrief reads a flight log from any altimeter and turns it into one clean, " +
+        "correctly-analyzed flight: apogee, max velocity (and Mach), max acceleration, max-Q, " +
+        "burnout, deployments, descent rates, and flight time — with altitude, velocity, and " +
+        "acceleration plotted against time and the key events marked. It handles the real-world " +
+        "mess (ejection spikes, sensor noise, mixed sample rates, units) so the numbers are honest.",
+      "It shows its work — overlay the raw trace on the cleaned line, open the full channel " +
+        "explorer to plot anything the logger recorded (plus derived Mach and dynamic pressure), " +
+        "and export the analyzed series as CSV or the charts as PNG. Debrief analyzes flights " +
+        "you've already flown — it's not a simulator and doesn't predict performance.",
+    ],
+    href: "https://debrief.fusionspace.co",
+    domain: "debrief.fusionspace.co",
+    repo: "https://github.com/nrdptel/fusionspace-debrief",
+    status: "in-progress",
+    tags: ["Flight-log analysis", "Altimeter data", "In-browser"],
+    features: [
+      {
+        title: "Any logger",
+        detail: "Reads flight files from common altimeters and normalizes units, sample rates, and channels.",
+      },
+      {
+        title: "Headline numbers",
+        detail:
+          "Apogee, max velocity (and Mach), max acceleration, max-Q, burnout, deployments, descent rates, flight time.",
+      },
+      {
+        title: "The curves that matter",
+        detail:
+          "Altitude, velocity, and acceleration vs time, with liftoff, burnout, apogee, deploy, and landing marked.",
+      },
+      {
+        title: "Real apogee",
+        detail:
+          "A median filter removes the single-sample spike an ejection charge punches into a barometric trace.",
+      },
+      {
+        title: "Channel explorer",
+        detail:
+          "Plot anything the logger recorded — plus derived Mach and dynamic pressure — with live stats over the zoomed window.",
+      },
+      {
+        title: "Shows its work",
+        detail: "Overlay the raw trace on the cleaned line to see exactly what spike-removal took out.",
+      },
+      {
+        title: "Exports",
+        detail: "Copy a text summary, save the analyzed series as CSV, or save the charts as PNG.",
+      },
+      {
+        title: "On-device logbook",
+        detail: "Recent flights are remembered in your browser for quick re-opening — nothing leaves your device.",
       },
     ],
   },
