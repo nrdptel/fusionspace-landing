@@ -81,7 +81,10 @@ export default function Home() {
             {liveProjects.length} live
           </span>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Two columns keeps the current tool count laying out cleanly (the live
+            tools fill even rows; the teaser trails). Revisit a 3rd column once
+            there are ~6+ projects. */}
+        <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
