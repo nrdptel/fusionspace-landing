@@ -15,6 +15,9 @@ export default defineConfig({
   use: {
     baseURL,
     trace: "on-first-retry",
+    // Keep the e2e deterministic — the production build registers a service worker,
+    // but we don't want its caching/registration racing with the tests.
+    serviceWorkers: "block",
   },
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: {

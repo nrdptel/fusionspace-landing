@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ServiceWorker } from "./components/ServiceWorker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   },
   description,
   applicationName: "Fusion Space",
+  manifest: "/manifest.webmanifest",
   // Canonical to the apex so the www and *.pages.dev hostnames don't get indexed
   // as duplicate content — they all resolve to one canonical URL.
   alternates: { canonical: "/" },
@@ -82,6 +84,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         {children}
+        <ServiceWorker />
       </body>
     </html>
   );

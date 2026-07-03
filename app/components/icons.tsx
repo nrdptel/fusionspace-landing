@@ -38,3 +38,11 @@ export function ArrowUpRight({ className }: IconProps) {
     </svg>
   );
 }
+
+export function XMark({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  );
+}
