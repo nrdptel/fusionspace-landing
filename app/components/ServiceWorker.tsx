@@ -45,7 +45,10 @@ export function ServiceWorker() {
 
     const register = async () => {
       try {
-        const reg = await navigator.serviceWorker.register("/sw.js");
+        // updateViaCache: "none" forces the browser to bypass the HTTP cache for the
+        // worker script (and its imports) on every update check, so a new deploy is
+        // picked up promptly regardless of the /sw.js Cache-Control header.
+        const reg = await navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" });
         offer(reg.waiting); // an update may already be waiting from a prior load
         track(reg.installing); // …or already installing when we registered (the race)
         reg.addEventListener("updatefound", () => track(reg.installing));
