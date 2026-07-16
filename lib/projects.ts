@@ -245,6 +245,79 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "muster",
+    name: "Muster",
+    description:
+      "Motor-hardware compatibility for high-power rocketry. Pick a reloadable case — AeroTech " +
+      "RMS, Cesaroni Pro, or Loki Research — and see every reload it flies, the closures and " +
+      "spacers each needs, its certification, and the full reusable-hardware shopping list. Or " +
+      "start from a reload and work back to the cases and parts that fly it.",
+    tagline:
+      "Map reloadable motor hardware end to end — every reload a case flies, the closures and spacers each needs, and the parts to buy.",
+    longDescription: [
+      "Reloadable motor hardware is a graph, and it's easy to get lost in it: a case flies some " +
+        "reloads directly and others only with spacers, each reload needs the right closures, and " +
+        "a few need a seal disc or a plugged closure. Muster makes that graph interactive across " +
+        "AeroTech RMS, Cesaroni Pro, and Loki Research. Tell it a case you own and it lists every " +
+        "reload it can fly — direct or with spacers — each reload's certification, and the complete " +
+        "list of reusable hardware to buy. Or start from a reload and it works back to the cases " +
+        "and hardware that fly it.",
+      "Every fit is typed — direct versus spacer, and how many spacers — never a bare yes/no, and " +
+        "the tool won't invent a cross-brand fit beyond the 75/98 mm crossloads the manufacturers " +
+        "publish. A companion kit planner turns the same graph on your own hardware: check off the " +
+        "cases and adapters you own and it ranks the single purchase that unlocks the most new " +
+        "reloads. Muster is a shopping aid, not an assembly guide — the reload's printed " +
+        "instructions are always the authority on the hardware it needs.",
+    ],
+    href: "https://muster.fusionspace.co",
+    domain: "muster.fusionspace.co",
+    repo: "https://github.com/nrdptel/fusionspace-muster",
+    status: "live",
+    tags: ["Motor hardware", "Reload compatibility", "In-browser"],
+    features: [
+      {
+        title: "Both directions",
+        detail:
+          "Start from a case to see every reload it flies, or from a reload to find the cases and hardware that fly it.",
+      },
+      {
+        title: "Typed fits",
+        detail:
+          "Direct fits and spacer fits are distinguished — and spacer fits grouped by how many spacers they need — never a bare yes/no.",
+      },
+      {
+        title: "Shopping list",
+        detail:
+          "Reusable hardware to own once — case, closures, seal disc, adapter — separated from the single-use reload, with part numbers and a plain-text copy.",
+      },
+      {
+        title: "Three systems",
+        detail:
+          "AeroTech RMS, Cesaroni Pro, and Loki Research, with the manufacturer-published 75/98 mm crossloads shown as a distinct caution, never a resolved fit.",
+      },
+      {
+        title: "Kit planner",
+        detail:
+          "Check off the hardware you own and it ranks the single purchase that unlocks the most new reloads — kept on your device.",
+      },
+      {
+        title: "Certification as a dimension",
+        detail:
+          "Each reload carries its certifying body, with out-of-production shown as its own status — never conflated with decertified.",
+      },
+      {
+        title: "Sourced end to end",
+        detail:
+          "The reload catalog mirrors ThrustCurve; the hardware graph is curated by hand from manufacturer data, with a source on every part and rule.",
+      },
+      {
+        title: "A page for every part",
+        detail:
+          "Each case and reload has its own deep-linkable, static page — cross-linked, in the sitemap, and leading back into the interactive tool.",
+      },
+    ],
+  },
+  {
     id: "debrief",
     name: "Debrief",
     description:
@@ -306,79 +379,6 @@ export const projects: Project[] = [
       {
         title: "On-device logbook",
         detail: "Recent flights are remembered in your browser for quick re-opening — nothing leaves your device.",
-      },
-    ],
-  },
-  {
-    id: "muster",
-    name: "Muster",
-    description:
-      "Motor-hardware compatibility for high-power rocketry. Pick a reloadable case — AeroTech " +
-      "RMS, Cesaroni Pro, or Loki Research — and see every reload it flies, the closures and " +
-      "spacers each needs, its certification, and the full reusable-hardware shopping list. Or " +
-      "start from a reload and work back to the cases and parts that fly it.",
-    tagline:
-      "Map reloadable motor hardware end to end — every reload a case flies, the closures and spacers each needs, and the parts to buy.",
-    longDescription: [
-      "Reloadable motor hardware is a graph, and it's easy to get lost in it: a case flies some " +
-        "reloads directly and others only with spacers, each reload needs the right closures, and " +
-        "a few need a seal disc or a plugged closure. Muster makes that graph interactive across " +
-        "AeroTech RMS, Cesaroni Pro, and Loki Research. Tell it a case you own and it lists every " +
-        "reload it can fly — direct or with spacers — each reload's certification, and the complete " +
-        "list of reusable hardware to buy. Or start from a reload and it works back to the cases " +
-        "and hardware that fly it.",
-      "Every fit is typed — direct versus spacer, and how many spacers — never a bare yes/no, and " +
-        "the tool won't invent a cross-brand fit beyond the 75/98 mm crossloads the manufacturers " +
-        "publish. A companion kit planner turns the same graph on your own hardware: check off the " +
-        "cases and adapters you own and it ranks the single purchase that unlocks the most new " +
-        "reloads. Muster is a shopping aid, not an assembly guide — the reload's printed " +
-        "instructions are always the authority on the hardware it needs.",
-    ],
-    href: "https://muster.fusionspace.co",
-    domain: "muster.fusionspace.co",
-    repo: "https://github.com/nrdptel/fusionspace-muster",
-    status: "in-progress",
-    tags: ["Motor hardware", "Reload compatibility", "In-browser"],
-    features: [
-      {
-        title: "Both directions",
-        detail:
-          "Start from a case to see every reload it flies, or from a reload to find the cases and hardware that fly it.",
-      },
-      {
-        title: "Typed fits",
-        detail:
-          "Direct fits and spacer fits are distinguished — and spacer fits grouped by how many spacers they need — never a bare yes/no.",
-      },
-      {
-        title: "Shopping list",
-        detail:
-          "Reusable hardware to own once — case, closures, seal disc, adapter — separated from the single-use reload, with part numbers and a plain-text copy.",
-      },
-      {
-        title: "Three systems",
-        detail:
-          "AeroTech RMS, Cesaroni Pro, and Loki Research, with the manufacturer-published 75/98 mm crossloads shown as a distinct caution, never a resolved fit.",
-      },
-      {
-        title: "Kit planner",
-        detail:
-          "Check off the hardware you own and it ranks the single purchase that unlocks the most new reloads — kept on your device.",
-      },
-      {
-        title: "Certification as a dimension",
-        detail:
-          "Each reload carries its certifying body, with out-of-production shown as its own status — never conflated with decertified.",
-      },
-      {
-        title: "Sourced end to end",
-        detail:
-          "The reload catalog mirrors ThrustCurve; the hardware graph is curated by hand from manufacturer data, with a source on every part and rule.",
-      },
-      {
-        title: "A page for every part",
-        detail:
-          "Each case and reload has its own deep-linkable, static page — cross-linked, in the sitemap, and leading back into the interactive tool.",
       },
     ],
   },
