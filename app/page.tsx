@@ -15,7 +15,7 @@ const jsonLd = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#org`,
-      name: "Fusion Space",
+      name: "FusionSpace",
       url: siteUrl,
       logo: `${siteUrl}/icon-512.png`,
       sameAs: ["https://github.com/nrdptel"],
@@ -23,7 +23,7 @@ const jsonLd = {
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      name: "Fusion Space",
+      name: "FusionSpace",
       url: siteUrl,
       publisher: { "@id": `${siteUrl}/#org` },
     },
@@ -49,7 +49,7 @@ export default function Home() {
             Free, polished tools for high-power rocketry.
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Fusion Space builds and maintains open tools for the hobby rocketry community —
+            FusionSpace builds and maintains open tools for the hobby rocketry community —
             careful about the data, free to use, and made to be genuinely useful at the bench.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -92,14 +92,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About — who's behind Fusion Space and what it stands for. */}
+      {/* About — who's behind FusionSpace and what it stands for. */}
       <section id="about" className="mt-20 scroll-mt-8 md:mt-28">
         <h2 className="border-b border-zinc-200 pb-4 text-lg font-semibold tracking-tight dark:border-zinc-800">
           About
         </h2>
         <div className="mt-6 max-w-2xl space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
           <p>
-            Fusion Space is an independent project building free tools for the high-power
+            FusionSpace is an independent project building free tools for the high-power
             rocketry community. Everything here is made to be genuinely useful at the bench —
             fast, careful about the data, and free to use, with no ads, no accounts, and nothing
             following you around.

@@ -17,33 +17,36 @@ const geistMono = Geist_Mono({
 // the production site; override with NEXT_PUBLIC_SITE_URL on the deploy host.
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://fusionspace.co";
 
+const NAME = "FusionSpace"; // always one word, like the wordmark
+
 const description =
-  "Fusion Space builds free, polished tools for the high-power rocketry community. " +
+  `${NAME} builds free, polished tools for the high-power rocketry community. ` +
   "Home of the HPR Motor Finder, with more rocketry tools on the way.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Fusion Space",
-    template: "%s · Fusion Space",
+    default: NAME,
+    template: `%s · ${NAME}`,
   },
   description,
-  applicationName: "Fusion Space",
+  applicationName: NAME,
   manifest: "/manifest.webmanifest",
+  // app/icon.svg, app/apple-icon.png and app/favicon.ico are picked up automatically.
   // Canonical to the apex so the www and *.pages.dev hostnames don't get indexed
   // as duplicate content — they all resolve to one canonical URL.
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    siteName: "Fusion Space",
-    title: "Fusion Space",
+    siteName: NAME,
+    title: NAME,
     description,
     url: "/",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fusion Space" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: NAME }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fusion Space",
+    title: NAME,
     description,
     images: ["/og.png"],
   },
@@ -55,10 +58,11 @@ export const metadata: Metadata = {
 // flash on refresh for dark-mode users.
 export const viewport: Viewport = {
   colorScheme: "light dark",
-  // Tints the mobile browser chrome to match each theme's page background.
+  // Tints the mobile browser chrome to match each theme's page background
+  // (brand Paper and Void).
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#09090b" },
+    { media: "(prefers-color-scheme: light)", color: "#F3F4F7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B0F1C" },
   ],
 };
 
@@ -81,7 +85,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <body className="min-h-full flex flex-col bg-paper text-zinc-900 dark:bg-void dark:text-zinc-100">
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         {children}
         <ServiceWorker />

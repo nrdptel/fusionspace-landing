@@ -2,9 +2,9 @@
   "name": "fusionspace-landing",
   "version": "0.1.0",
   "private": true,
-  "description": "Landing page for fusionspace.co — a hub for Fusion Space's hobby rocketry tools.",
+  "description": "Landing page for fusionspace.co — a hub for FusionSpace's hobby rocketry tools.",
   "license": "MIT",
-  "author": "Fusion Space",
+  "author": "FusionSpace",
   "homepage": "https://fusionspace.co",
   "repository": {
     "type": "git",

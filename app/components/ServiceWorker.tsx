@@ -73,7 +73,7 @@ export function ServiceWorker() {
     >
       <div className="flex items-center gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
         <span className="text-zinc-700 dark:text-zinc-200">
-          A new version of Fusion Space is available.
+          A new version of FusionSpace is available.
         </span>
         <button
           type="button"

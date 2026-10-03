@@ -1,4 +1,4 @@
-// Service worker for offline use. Fusion Space is a static hub, so once it's been
+// Service worker for offline use. FusionSpace is a static hub, so once it's been
 // loaded online it should keep working with no connection — handy at a launch site
 // where there's no cell signal.
 //
@@ -10,7 +10,7 @@
 //     so assets load instantly and refresh in the background.
 // The cache name is versioned; old caches are cleared on activate.
 
-const CACHE = "fusionspace-v1";
+const CACHE = "fusionspace-v2";
 const SHELL = "/";
 
 self.addEventListener("install", (event) => {
