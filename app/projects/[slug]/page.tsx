@@ -25,23 +25,25 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return {};
   const description = project.tagline ?? project.description;
+  // Each tool has its own Rev C social card in public/og/<id>.png.
+  const ogImage = `/og/${project.id}.png`;
   return {
     title: project.name,
     description,
     alternates: { canonical: `/projects/${project.id}` },
     openGraph: {
       type: "website",
-      siteName: "Fusion Space",
-      title: `${project.name} · Fusion Space`,
+      siteName: "FusionSpace",
+      title: `${project.name} · FusionSpace`,
       description,
       url: `/projects/${project.id}`,
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Fusion Space" }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: project.name }],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.name} · Fusion Space`,
+      title: `${project.name} · FusionSpace`,
       description,
-      images: ["/og.png"],
+      images: [ogImage],
     },
   };
 }
@@ -68,7 +70,7 @@ export default async function ProjectPage({
     description: project.tagline ?? project.description,
     url: project.href,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    publisher: { "@type": "Organization", name: "Fusion Space", url: siteUrl },
+    publisher: { "@type": "Organization", name: "FusionSpace", url: siteUrl },
   };
 
   return (

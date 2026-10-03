@@ -1,4 +1,4 @@
-// The Fusion Space project catalog. Adding a new project to the site is a
+// The FusionSpace project catalog. Adding a new project to the site is a
 // one-entry change here — append an object and it renders on the home page, gets
 // its own /projects/<id> detail page, and appears in the sitemap. No other file
 // needs to change.

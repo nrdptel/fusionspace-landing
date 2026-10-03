@@ -25,6 +25,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Brand page backgrounds (bg-paper / bg-void). Keep in sync with the html
+   backgrounds below, the themeColor in layout.tsx and manifest.webmanifest. */
+@theme {
+  --color-paper: #f3f4f7;
+  --color-void: #0b0f1c;
+}
+
 /* Theme background driven by a CSS media query, NOT the JS theme script, so it's
    correct on the very first paint with no script-timing dependency. The default
    is DARK (a brief flash of dark beats white). The theme script in layout.tsx
@@ -35,20 +42,20 @@
    on a dark OS resolves to light instead of falling through to the dark default. */
 html {
   color-scheme: light dark;
-  background-color: #09090b; /* zinc-950 — matches the body's dark background */
+  background-color: #0b0f1c; /* brand Void — matches the body's dark background */
 }
 @media (prefers-color-scheme: light) {
   html:not(.dark) {
-    background-color: #ffffff;
+    background-color: #f3f4f7;
   }
 }
 html.dark {
   color-scheme: dark;
-  background-color: #09090b;
+  background-color: #0b0f1c;
 }
 html.light {
   color-scheme: light;
-  background-color: #ffffff;
+  background-color: #f3f4f7;
 }
 
 /* Visible keyboard focus for interactive controls (WCAG 2.4.7), in the app's
@@ -83,7 +90,7 @@ summary:focus-visible,
 }
 
 /* Subtle hero "constellation" — faint sparkles behind the headline that echo the
-   Fusion Space mark. A few twinkle very slowly; motion is disabled entirely for
+   FusionSpace mark. A few twinkle very slowly; motion is disabled entirely for
    visitors who prefer reduced motion, so it never distracts. */
 @keyframes fs-twinkle {
   0%,

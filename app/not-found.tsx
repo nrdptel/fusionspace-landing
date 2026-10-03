@@ -7,7 +7,7 @@ export default function NotFound() {
       <p className="font-mono text-sm text-indigo-600 dark:text-indigo-400">404</p>
       <h1 className="mt-3 text-3xl font-semibold tracking-tight">Page not found</h1>
       <p className="mt-3 max-w-lg text-zinc-600 dark:text-zinc-400">
-        That page doesn&apos;t exist. Head back to the Fusion Space home page to find what
+        That page doesn&apos;t exist. Head back to the FusionSpace home page to find what
         you&apos;re looking for.
       </p>
       <Link

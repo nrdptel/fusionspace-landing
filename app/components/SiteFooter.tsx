@@ -32,9 +32,9 @@ export function SiteFooter() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/brand/fusion-space-wordmark.svg"
-            alt="Fusion Space"
-            width={1598}
-            height={281}
+            alt="FusionSpace"
+            width={680}
+            height={115}
             className="h-5 w-auto"
           />
         </div>

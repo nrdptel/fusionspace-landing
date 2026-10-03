@@ -1,7 +1,7 @@
-# Fusion Space — landing page
+# FusionSpace — landing page
 
 The landing page for [**fusionspace.co**](https://fusionspace.co): a hub for the free,
-open hobby-rocketry tools built under the Fusion Space name, starting with the
+open hobby-rocketry tools built under the FusionSpace name, starting with the
 [HPR Motor Finder](https://motor.fusionspace.co).
 
 It shares the look and theme system of the sub-sites (Geist type, zinc-on-near-black with an
@@ -114,29 +114,30 @@ app/
     ThemeToggle.tsx     System -> Light -> Dark cycle (localStorage)
     ProjectCard.tsx     project tile + "More on the way" teaser
     ServiceWorker.tsx   registers public/sw.js (offline) + a refresh-on-update toast
-  icon.svg, apple-icon.png   favicons (the Fusion Space sparkle mark)
+  icon.svg, apple-icon.png, favicon.ico   favicons (Rev C mark on a Void tile)
   robots.ts, sitemap.ts, not-found.tsx
 lib/
   projects.ts           the project catalog — edit this to add a tool
 public/
-  brand/                     Fusion Space logo variations (see brand/README.md)
-    fusion-space-wordmark.svg   horizontal wordmark (header + footer)
+  brand/                     FusionSpace logo variations (see brand/README.md)
+    fusion-space-wordmark.svg   Rev C horizontal lockup, mark + wordmark (header + footer)
+    logo-on-white@2x.png        email-signature logo (loaded from fusionspace.co)
     fusion-space-mark.svg       sparkle mark (hero)
     fusion-space-stacked.svg    two-line lockup (spare)
     fusion-space-vertical.svg   vertical lockup (spare)
   sw.js                      service worker (offline / PWA)
   manifest.webmanifest       web app manifest (installable / add-to-home-screen)
-  og.png                     social share card (1200×630) — see assets/gen-og.sh
-  icon-192.png, icon-512.png  PWA / manifest icons
+  og.png                     social share card (1200×630), from the brand kit
+  og/<id>.png                per-tool social cards for /projects/<id>
+  icon-192.png, icon-512.png  PWA / manifest icons ("any")
+  icon-maskable-*.png        PWA / manifest icons ("maskable")
   _headers                   Cloudflare Pages security headers
-assets/
-  gen-og.sh                  regenerates public/og.png from the brand lockup
 ```
 
-The brand SVGs are svgo-optimized (~45% of the raw Illustrator export). To regenerate the
-social card after a brand change, run `bash assets/gen-og.sh` (needs `librsvg2-bin`).
+The icons, header lockup and social cards come from the FusionSpace brand kit
+(Rev C); replace them with the kit's files rather than editing them here.
 
 ## License
 
-Source code is [MIT](./LICENSE). The Fusion Space name and the brand assets in
+Source code is [MIT](./LICENSE). The FusionSpace name and the brand assets in
 `public/brand/` are trademarks and are not covered by that license.

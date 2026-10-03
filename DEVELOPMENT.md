@@ -4,7 +4,7 @@ Quick reference for working in this repo.
 
 ## What this is
 
-The landing page for **fusionspace.co** — a hub linking to the Fusion Space hobby-rocketry
+The landing page for **fusionspace.co** — a hub linking to the FusionSpace hobby-rocketry
 tools (currently the [HPR Motor Finder](https://motor.fusionspace.co)). It deliberately shares
 the look and theme system of the sub-sites so the family reads as one product.
 
@@ -35,17 +35,17 @@ production deploy to Cloudflare Pages. PRs and pushes to `main` run `test.yml`
   Optional rich fields (`tagline`, `longDescription`, `features`) flesh out the detail page. Keep
   unannounced projects out; the static "More on the way" card is the only forward-looking copy and
   stays intentionally vague (no names, no dates).
-- **Change a logo / lockup:** the four brand variations live in `public/brand/` (see its
-  README). Header + footer use the wordmark, the hero uses the sparkle mark. Each SVG's
-  `viewBox` is cropped tight to the artwork and svgo-optimized.
-- **Regenerate the social card:** `bash assets/gen-og.sh` (needs `librsvg2-bin`) rewrites
-  `public/og.png` from the brand lockup.
+- **Change a logo / lockup:** the brand files live in `public/brand/` (see its README).
+  Header + footer use the Rev C horizontal lockup (`fusion-space-wordmark.svg`).
+- **Social cards:** `public/og.png` (site) and `public/og/<id>.png` (one per tool page) come
+  from the brand kit; drop in the kit's files to update them.
 
 ## Conventions
 
 - Theme: dark default, with a System/Light/Dark toggle persisted to `localStorage`
   (`fusionspace.theme`). The flash-free first paint is driven by CSS + an inline script in
   `app/layout.tsx` — mirror any change to the toggle in both places.
-- Palette: zinc on near-black (`#09090b`), indigo-500 (`#6366f1`) accent, Geist Sans/Mono.
+- Palette: zinc text on brand Paper (`#F3F4F7`) / Void (`#0B0F1C`) backgrounds, indigo-500
+  (`#6366f1`) accent, Geist Sans/Mono.
   Match this rather than introducing new colors, to stay consistent with the sub-sites.
 - Keep the page lean and text-led (the motor site's house style); avoid over-designing.

@@ -10,15 +10,15 @@ export function SiteHeader() {
     <header className="flex items-center justify-between gap-4">
       <Link
         href="/"
-        aria-label="Fusion Space home"
+        aria-label="FusionSpace home"
         className="inline-flex items-center rounded-md focus-visible:outline-2"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/brand/fusion-space-wordmark.svg"
-          alt="Fusion Space"
-          width={1598}
-          height={281}
+          alt="FusionSpace"
+          width={680}
+          height={115}
           className="h-6 w-auto md:h-7"
         />
       </Link>

@@ -1,5 +1,5 @@
 /** Faint constellation behind the hero headline. Each sparkle is the same
- * concave 4-point shape as the Fusion Space mark, scattered at fixed positions
+ * concave 4-point shape as the FusionSpace mark, scattered at fixed positions
  * (deterministic — no random, so SSR and client match) at low opacity. A subset
  * twinkles very slowly; globals.css disables that under prefers-reduced-motion.
  * Purely decorative, so the whole layer is aria-hidden and non-interactive. */
